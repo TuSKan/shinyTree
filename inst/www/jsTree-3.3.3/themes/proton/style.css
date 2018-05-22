@@ -512,7 +512,6 @@ filter: gray;
 }
 .jstree-proton .jstree-themeicon-custom {
   background-color: transparent;
-  background-size: 320px 96px;
   background-image: none;
   background-position: 0 0;
 }

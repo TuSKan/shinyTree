@@ -1,5 +1,6 @@
 listToTags <- function(myList, parent=shiny::tags$ul()){
   
+  if (length(myList) == 0) return(parent)
   # Handle parent tag attributes
   el <- list(parent)
   if (!is.null(attr(myList, "stid"))){
@@ -69,9 +70,15 @@ getJSON <- function(node){
   }
   
   # Handle 'icon' attribute
-  icon <- attr(node, "sticon")
+  icon <- attr(node, "stifacon")
   if (!is.null(icon)){
     icon <- paste0("fa fa-",icon)
+    attrib <- c(attrib, paste0("\"icon\": \"", icon, "\""))
+  }
+  
+  # Handle 'icon' attribute
+  icon <- attr(node, "sticon")
+  if (!is.null(icon)){
     attrib <- c(attrib, paste0("\"icon\": \"", icon, "\""))
   }
   
